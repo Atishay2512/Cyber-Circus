@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            width: 100vw;
+            height: 100vh;
+            background-color: rgb(25, 25, 25);
+        }
+        .loop-cubes{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            width: 100px;
+            height: 100vh;
+        }
+        @keyframes animate{
+            to{
+                width: 60px;
+                height: 60px;
+            }
+        }
+        #cube1, #cube2, #cube3, #cube4, #cube5, #cube6{
+            width: 30px;
+            height: 30px;
+            transform: rotateX(45deg) rotateY(0deg) rotateZ(45deg);
+            animation: animate 0.6s cubic-bezier(0.45, 0.03, 0.51, 0.95) infinite alternate;
+        }
+        @keyframes beforeanimate{
+            to{
+                width: 42px;
+                height: 64px;
+                transform: rotateX(0deg) rotateY(0deg) rotateZ(-45deg) translateX(-13px) translateY(56px) skewY(45deg);
+            }
+        }
+        #cube1::before, #cube2::before, #cube3::before, #cube4::before, #cube5::before, #cube6::before{
+            content: '';
+            position: absolute;
+            display: block;
+            width: 22px;
+            height: 32px;
+            transform: rotateX(0deg) rotateY(0deg) rotateZ(-45deg) translateX(-7px) translateY(28px) skewY(45deg);
+            animation: beforeanimate 0.6s cubic-bezier(0.45, 0.03, 0.51, 0.95) infinite alternate;
+        }
+        @keyframes afteranimate{
+            to{
+                width: 42px;
+                height: 60px;
+                transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) translateX(60px) translateY(21px) skewY(45deg);
+            }
+        }
+        #cube1::after, #cube2::after, #cube3::after, #cube4::after, #cube5::after, #cube6::after{
+            content: '';
+            position:absolute;
+            display: block;
+            width: 22px;
+            height: 30px;
+            transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) translateX(30px) translateY(11px) skewY(45deg);
+            animation: afteranimate 0.6s cubic-bezier(0.45, 0.03, 0.51, 0.95) infinite alternate;
+        }
+        #cube1{
+            background-color: #fe1e52;
+            z-index: 6;
+            animation-delay: -0.2s;
+        }
+        #cube1::before{
+            background-color: #ff6488;
+            z-index: 6;
+            animation-delay: -0.2s;
+        }
+        #cube1::after{
+            background-color: #ff416d;
+            z-index: 6;
+            animation-delay: -0.2s;
+        }
+        #cube2{
+            background-color: #fe4252;
+            z-index: 5;
+            animation-delay: -0.4s;
+        }
+        #cube2::before{
+            background-color: #ff8892;
+            z-index: 5;
+            animation-delay: -0.4s;
+        }
+        #cube2::after{
+            background-color: #ff6572;
+            z-index: 5;
+            animation-delay: -0.4s;
+        }
+        #cube3{
+            background-color: #fe6553;
+            z-index: 4;
+            animation-delay: -0.6s;
+        }
+        #cube3::before{
+            background-color: #ffa499;
+            z-index: 4;
+            animation-delay: -0.6s;
+        }
+        #cube3::after{
+            background-color: #ff8476;
+            z-index: 4;
+            animation-delay: -0.6s;
+        }
+        #cube4{
+            background-color: #fe8953;
+            z-index: 3;
+            animation-delay: -0.8s;
+        }
+        #cube4::before{
+            background-color: #ffb999;
+            z-index: 3;
+            animation-delay: -0.8s;
+        }
+        #cube4::after{
+            background-color: #ffa176;
+            z-index: 3;
+            animation-delay: -0.8s;
+        }
+        #cube5{
+            background-color: #feac54;
+            z-index: 2;
+            animation-delay: -1s
+        }
+        #cube5::before{
+            background-color: #ffce9a;
+            z-index: 2;
+            animation-delay: -1s
+        }
+        #cube5::after{
+            background-color: #ffbd77;
+            z-index: 2;
+            animation-delay: -1s
+        }
+        #cube6{
+            background-color: #fed054;
+            z-index: 1;
+            animation-delay: -1.2s
+        }
+        #cube6::before{
+            background-color: #ffe49a;
+            z-index: 1;
+            animation-delay: -1.2s
+        }
+        #cube6::after{
+            background-color: #ffda77;
+            z-index: 1;
+            animation-delay: -1.2s
+        }
+    </style>
+</head>
+<body>
+    <div class="loop-cubes">
+        <div id="cube1"></div>
+        <div id="cube2"></div>
+        <div id="cube3"></div>
+        <div id="cube4"></div>
+        <div id="cube5"></div>
+        <div id="cube6"></div>
+    </div>
+</body>
+</html>

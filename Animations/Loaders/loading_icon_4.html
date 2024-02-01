@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            background-color: black;
+        }
+        .loader{
+            width: 300px;
+            height: 300px;
+            position: absolute;
+            top: 27vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 0;
+        }
+        @keyframes animate{
+            0%{
+                border-radius: 50%;
+                transform: rotate(-90deg);
+            }
+            100%{
+                border-radius: 0%;
+                transform: rotate(0deg);
+            }
+        }
+        .rotate{
+            background-color: #3884ff45;
+            position: absolute;
+            animation: animate 1s linear infinite alternate;
+        }
+        .rotate:nth-child(1){
+            filter: hue-rotate(15deg);
+            width: 300px;
+            height: 300px;
+            z-index: 1;
+            animation-delay: calc(0.07s * 1);
+        }
+        .rotate:nth-child(2){
+            filter: hue-rotate(30deg);
+            width: 280px;
+            height: 280px;
+            z-index: 2;
+            animation-delay: calc(0.07s * 2);
+        }
+        .rotate:nth-child(3){
+            filter: hue-rotate(45deg);
+            width: 260px;
+            height: 260px;
+            z-index: 3;
+            animation-delay: calc(0.07s * 3);
+        }
+        .rotate:nth-child(4){
+            filter: hue-rotate(60deg);
+            width: 240px;
+            height: 240px;
+            z-index: 4;
+            animation-delay: calc(0.07s * 4);
+        }
+        .rotate:nth-child(5){
+            filter: hue-rotate(75deg);
+            width: 220px;
+            height: 220px;
+            z-index: 5;
+            animation-delay: calc(0.07s * 5);
+        }
+        .rotate:nth-child(6){
+            filter: hue-rotate(90deg);
+            width: 200px;
+            height: 200px;
+            z-index: 6;
+            animation-delay: calc(0.07s * 6);
+        }
+        .rotate:nth-child(7){
+            filter: hue-rotate(105deg);
+            width: 180px;
+            height: 180px;
+            z-index: 7;
+            animation-delay: calc(0.07s * 7);
+        }
+        .rotate:nth-child(8){
+            filter: hue-rotate(120deg);
+            width: 160px;
+            height: 160px;
+            z-index: 8;
+            animation-delay: calc(0.07s * 8);
+        }
+        .rotate:nth-child(9){
+            filter: hue-rotate(135deg);
+            width: 140px;
+            height: 140px;
+            z-index: 9;
+            animation-delay: calc(0.07s * 9);
+        }
+        .rotate:nth-child(10){
+            filter: hue-rotate(150deg);
+            width: 120px;
+            height: 120px;
+            z-index: 10;
+            animation-delay: calc(0.07s * 10);
+        }
+        .rotate:nth-child(11){
+            filter: hue-rotate(165deg);
+            width: 100px;
+            height: 100px;
+            z-index: 11;
+            animation-delay: calc(0.07s * 11);
+        }
+        .rotate:nth-child(12){
+            filter: hue-rotate(180deg);
+            width: 80px;
+            height: 80px;
+            z-index: 12;
+            animation-delay: calc(0.07s * 12);
+        }
+        .rotate:nth-child(13){
+            filter: hue-rotate(195deg);
+            width: 60px;
+            height: 60px;
+            z-index: 13;
+            animation-delay: calc(0.07s * 13);
+
+        }
+    </style>
+</head>
+<body>
+    <div class="loader">
+        <div class="rotate"></div>
+        <div class="rotate"></div>
+        <div class="rotate"></div>
+        <div class="rotate"></div>
+        <div class="rotate"></div>
+        <div class="rotate"></div>
+        <div class="rotate"></div>
+        <div class="rotate"></div>
+        <div class="rotate"></div>
+        <div class="rotate"></div>
+        <div class="rotate"></div>
+        <div class="rotate"></div>
+        <div class="rotate"></div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyber Circus</title>
+    <style>
+        body {
+            width: 97vw;
+            height: 97vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgb(25, 25, 25);
+        }
+
+        .card {
+            width: 270px;
+            height: 370px;
+            background-image: linear-gradient(230deg, rgba(93, 93, 93, 0.03) 0%, rgba(93, 93, 93, 0.03) 50%, rgba(78, 78, 78, 0.03) 50%, rgba(78, 78, 78, 0.03) 100%), linear-gradient(107deg, rgba(55, 55, 55, 0.01) 0%, rgba(55, 55, 55, 0.01) 50%, rgba(170, 170, 170, 0.01) 50%, rgba(170, 170, 170, 0.01) 100%), linear-gradient(278deg, rgba(16, 16, 16, 0.03) 0%, rgba(16, 16, 16, 0.03) 50%, rgba(24, 24, 24, 0.03) 50%, rgba(24, 24, 24, 0.03) 100%), linear-gradient(205deg, rgba(116, 116, 116, 0.03) 0%, rgba(116, 116, 116, 0.03) 50%, rgba(0, 0, 0, 0.03) 50%, rgba(0, 0, 0, 0.03) 100%), linear-gradient(150deg, rgba(5, 5, 5, 0.03) 0%, rgba(5, 5, 5, 0.03) 50%, rgba(80, 80, 80, 0.03) 50%, rgba(80, 80, 80, 0.03) 100%), linear-gradient(198deg, rgba(231, 231, 231, 0.03) 0%, rgba(231, 231, 231, 0.03) 50%, rgba(26, 26, 26, 0.03) 50%, rgba(26, 26, 26, 0.03) 100%), linear-gradient(278deg, rgba(89, 89, 89, 0.03) 0%, rgba(89, 89, 89, 0.03) 50%, rgba(26, 26, 26, 0.03) 50%, rgba(26, 26, 26, 0.03) 100%), linear-gradient(217deg, rgba(28, 28, 28, 0.03) 0%, rgba(28, 28, 28, 0.03) 50%, rgba(202, 202, 202, 0.03) 50%, rgba(202, 202, 202, 0.03) 100%), linear-gradient(129deg, rgba(23, 23, 23, 0.03) 0%, rgba(23, 23, 23, 0.03) 50%, rgba(244, 244, 244, 0.03) 50%, rgba(244, 244, 244, 0.03) 100%), linear-gradient(135deg, rgb(1, 132, 255), rgb(198, 5, 91));
+            transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            border-radius: 20px;
+            position: relative;
+        }
+
+        .dot {
+            position: absolute;
+            background: linear-gradient(45deg, rgb(255, 255, 255) 0%, rgba(255, 255, 255, 0.34) 100%);
+            border-top: 1px solid rgb(255, 255, 255);
+            border-right: 1px solid white;
+            transition: left 1s ease-in-out, top 1s ease-in-out, transform 0.2s ease-in-out;
+            z-index: 2;
+        }
+
+        .size5 {
+            width: 5px;
+            height: 5px;
+            border-radius: 2px;
+        }
+
+        .size10 {
+            width: 10px;
+            height: 10px;
+            border-radius: 4px;
+        }
+
+        .size15 {
+            width: 15px;
+            height: 15px;
+            border-radius: 5px;
+        }
+
+        .size20 {
+            width: 20px;
+            height: 20px;
+            border-radius: 7px;
+        }
+        .dot1{
+            top: 30px;
+            left: 50px;
+        }
+        .card:hover .dot1{
+            top: 106px;
+            left: 85px;
+        }
+        .dot2{
+            top: 60px;
+            left: 90px;
+        }
+        .card:hover .dot2{
+            top: 92px;
+            left: 120px;
+        }
+        .dot52{
+            top: 54px;
+            left: 65px;
+        }
+        .card:hover .dot52{
+            top: 95px;
+            left: 90px;
+        }
+        .dot72{
+            top: 140px;
+            left: 120px;
+        }
+        .card:hover .dot72{
+            top: 92px;
+            left: 103px;
+        }
+        .dot53{
+            top: 85px;
+            left: 40px;
+        }
+        .card:hover .dot53{
+            top: 107px;
+            left: 91px;
+        }
+        .dot76{
+            top: 110px;
+            left: 225px;
+        }
+        .card:hover .dot76{
+            top: 98px;
+            left: 175px;
+        }
+        .dot3{
+            top: 55px;
+            left: 205px;
+        }
+        .card:hover .dot3{
+            top: 93px;
+            left: 187px;
+        }
+        .dot77{
+            top: 190px;
+            left: 105px;
+        }
+        .card:hover .dot77{
+            top: 151px;
+            left: 49px;
+        }
+        .dot54{
+            top: 80px;
+            left: 190px;
+        }
+        .card:hover .dot54{
+            top: 120px;
+            left: 180px;
+        }
+        .dot4{
+            top: 150px;
+            left: 205px;
+        }
+        .card:hover .dot4{
+            top: 128px;
+            left: 189px;
+        }
+        .dot5{
+            top: 186px;
+            left: 168px;
+        }
+        .card:hover .dot5{
+            top: 135px;
+            left: 187px;
+        }
+        .dot6{
+            top: 180px;
+            left: 190px;
+        }
+        .card:hover .dot6{
+            top: 140px;
+            left: 190px;
+        }
+        .dot55{
+            left: 85px;
+            top: 165px;
+        }
+        .card:hover .dot55{
+            top: 172px;
+            left: 66px;
+        }
+        .dot73{
+            top: 113px;
+            left: 25px;
+        }
+        .card:hover .dot73{
+            top: 174px;
+            left: 49px;
+        }
+        .dot7{
+            top: 160px;
+            left: 40px;
+        }
+        .card:hover .dot7{
+            top: 184px;
+            left: 72px;
+        }
+        .dot8{
+            top: 150px;
+            left: 15px;
+        }
+        .card:hover .dot8{
+            top: 186px;
+            left: 65px;
+        }
+        .dot9{
+            top: 205px;
+            left: 89px;
+        }
+        .card:hover .dot9{
+            top: 191px;
+            left: 71px;
+        }
+        .dot56{
+            top: 241px;
+            left: 30px;
+        }
+        .card:hover .dot56{
+            top: 193px;
+            left: 60px;
+        }
+        .dot10{
+            top: 200px;
+            left: 20px;
+        }
+        .card:hover .dot10{
+            top: 191px;
+            left: 54px;
+        }
+        .dot78{
+            opacity: 1;
+            top: 300px;
+            left: 80px;
+        }
+        .card:hover .dot78{
+            top: 240px;
+            left: 109px;
+        }
+        .dot57{
+            top: 181px;
+            left: 47px;
+        }
+        .card:hover .dot57{
+            top: 200px;
+            left: 70px;
+        }
+        .dot11{
+            left: 40px;
+            top: 215px;
+        }
+        .card:hover .dot11{
+            top: 198px;
+            left: 53px;
+        }
+        .dot12{
+            top: 191px;
+            left: 79px;
+        }
+        .card:hover .dot12{
+            top: 205px;
+            left: 61px;
+        }
+        .dot74{
+            top: 275px;
+            left: 45px;
+        }
+        .card:hover .dot74{
+            top: 210px;
+            left: 61px;
+        }
+        .dot13{
+            top: 180px;
+            left: 30px;
+        }
+        .card:hover .dot13{
+            top: 204px;
+            left: 54px;
+        }
+        .dot14{
+            top: 300px;
+            left: 20px;
+        }
+        .card:hover .dot14{
+            top: 211px;
+            left: 55px;
+        }
+        .dot15{
+            top: 200px;
+            left: 140px;
+        }
+        .card:hover .dot15{
+            top: 213px;
+            left: 77px;
+        }
+        .dot16{
+            top: 255px;
+            left: 60px;
+        }
+        .card:hover .dot16{
+            top: 221px;
+            left: 79px;
+        }
+        .dot58{
+            top: 270px;
+            left: 100px;
+        }
+        .card:hover .dot58{
+            top: 225px;
+            left: 69px;
+        }
+        .dot59{
+            top: 330px;
+            left: 46px;
+        }
+        .card:hover .dot59{
+            top: 247px;
+            left: 96px;
+        }
+        .dot17{
+            top: 265px;
+            left: 27px;
+        }
+        .card:hover .dot17{
+            top: 226px;
+            left: 62px;
+        }
+        .dot18{
+            top: 287px;
+            left: 125px;
+        }
+        .card:hover .dot18{
+            top: 257px;
+            left: 105px;
+        }
+        .dot19{
+            top: 225px;
+            left: 121px;
+        }
+        .card:hover .dot19{
+            top: 240px;
+            left: 101px;
+        }
+        .dot60{
+            top: 274px;
+            left: 74px;
+        }
+        .card:hover .dot60{
+            top: 234px;
+            left: 81px;
+        }
+        .dot20{
+            top: 256px;
+            left: 93px;
+        }
+        .card:hover .dot20{
+            top: 246px;
+            left: 83px;
+        }
+        .dot21{
+            top: 315px;
+            left: 40px;
+        }
+        .card:hover .dot21{
+            top: 248px;
+            left: 90px;
+        }
+        .dot22{
+            top: 225px;
+            left: 140px;
+        }
+        .card:hover .dot22{
+            top: 240px;
+            left: 94px;
+        }
+        .dot23{
+            top: 200px;
+            left: 70px;
+        }
+        .card:hover .dot23{
+            top: 227px;
+            left: 81px;
+        }
+        .dot24{
+            top: 220px;
+            left: 100px;
+        }
+        .card:hover .dot24{
+            top: 232px;
+            left: 91px;
+        }
+        .dot25{
+            top: 220px;
+            left: 60px;
+        }
+        .card:hover .dot25{
+            top: 237px;
+            left: 70px;
+        }
+        .dot26{
+            top: 243px;
+            left: 81px;
+        }
+        .card:hover .dot26{
+            top: 238px;
+            left: 76px;
+        }
+        .dot27{
+            top: 170px;
+            left: 64px;
+        }
+        .card:hover .dot27{
+            top: 163px;
+            left: 72px;
+        }
+        .dot28{
+            top: 130px;
+            left: 100px;
+        }
+        .card:hover .dot28{
+            top: 155px;
+            left: 72px;
+        }
+        .dot61{
+            top: 161px;
+            left: 107px;
+        }
+        .card:hover .dot61{
+            top: 142px;
+            left: 69px;
+        }
+        .dot75{
+            top: 55px;
+            left: 25px;
+        }
+        .card:hover .dot75{
+            top: 125px;
+            left: 62px;
+        }
+        .dot29{
+            top: 75px;
+            left: 15px;
+        }
+        .card:hover .dot29{
+            top: 143px;
+            left: 54px;
+        }
+        .dot30{
+            top: 133px;
+            left: 51px;
+        }
+        .card:hover .dot30{
+            top: 143px;
+            left: 61px;
+        }
+        .dot31{
+            top: 150px;
+            left: 65px;
+        }
+        .card:hover .dot31{
+            top: 134px;
+            left: 80px;
+        }
+        .dot32{
+            top: 90px;
+            left: 75px;
+        }
+        .card:hover .dot32{
+            top: 127px;
+            left: 80px;
+        }
+        .dot33{
+            top: 45px;
+            left: 100px;
+        }
+        .card:hover .dot33{
+            top: 121px;
+            left: 85px;
+        }
+        .dot62{
+            top: 15px;
+            left: 20px;
+        }
+        .card:hover .dot62{
+            top: 114px;
+            left: 71px;
+        }
+        .dot34{
+            top: 100px;
+            left: 96px;
+        }
+        .card:hover .dot34{
+            top: 115px;
+            left: 84px;
+        }
+        .dot35{
+            top: 20px;
+            left: 75px;
+        }
+        .card:hover .dot35{
+            top: 109px;
+            left: 77px;
+        }
+        .dot36{
+            top: 110px;
+            left: 120px;
+        }
+        .card:hover .dot36{
+            top: 95px;
+            left: 128px;
+        }
+        .dot63{
+            top: 25px;
+            left: 150px;
+        }
+        .card:hover .dot63{
+            top: 94px;
+            left: 150px;
+        }
+        .dot37{
+            top: 118px;
+            left: 150px;
+        }
+        .card:hover .dot37{
+            top: 94px;
+            left: 136px;
+        }
+        .dot38{
+            top: 57px;
+            left: 140px;
+        }
+        .card:hover .dot38{
+            top: 97px;
+            left: 143px;
+        }
+        .dot39{
+            top: 70px;
+            left: 170px;
+        }
+        .card:hover .dot39{
+            top: 91px;
+            left: 142px;
+        }
+        .dot40{
+            top: 165px;
+            left: 155px;
+        }
+        .card:hover .dot40{
+            top: 102px;
+            left: 160px;
+        }
+        .dot41{
+            top: 30px;
+            left: 175px;
+        }
+        .card:hover .dot41{
+            top: 106px;
+            left: 167px;
+        }
+        .dot42{
+            top: 134px;
+            left: 182px;
+        }
+        .card:hover .dot42{
+            top: 114px;
+            left: 172px;
+        }
+        .dot64{
+            top: 33px;
+            left: 240px;
+        }
+        .card:hover .dot64{
+            top: 95px;
+            left: 164px;
+        }
+        .dot79{
+            top: 288px;
+            left: 161px;
+        }
+        .card:hover .dot79{
+            top: 248px;
+            left: 141px;
+        }
+        .dot43{
+            top: 310px;
+            left: 145px;
+        }
+        .card:hover .dot43{
+            top: 254px;
+            left: 136px;
+        }
+        .dot47{
+            top: 262px;
+            left: 190px;
+        }
+        .card:hover .dot47{
+            top: 244px;
+            left: 170px;
+        }
+        .dot65{
+            top: 180px;
+            left: 220px;
+        }
+        .card:hover .dot65{
+            top: 235px;
+            left: 176px;
+        }
+        .dot48{
+            top: 240px;
+            left: 220px;
+        }
+        .card:hover .dot48{
+            top: 229px;
+            left: 186px;
+        }
+        .dot49{
+            top: 215px;
+            left: 170px;
+        }
+        .card:hover .dot49{
+            top: 223px;
+            left: 192px;
+        }
+        .dot50{
+            top: 300px;
+            left: 210px;
+        }
+        .card:hover .dot50{
+            top: 250px;
+            left: 165px;
+        }
+        .dot51{
+            top: 230px;
+            left: 180px;
+        }
+        .card:hover .dot51{
+            top: 247px;
+            left: 160px;
+        }
+        .dot66{
+            top: 260px;
+            left: 240px;
+        }
+        .card:hover .dot66{
+            top: 253px;
+            left: 160px;
+        }
+        .dot67{
+            top: 85px;
+            left: 130px;
+        }
+        .card:hover .dot67{
+            top: 90px;
+            left: 130px;
+        }
+        .dot68{
+            top: 340px;
+            left: 120px;
+        }
+        .card:hover .dot68{
+            top: 250px;
+            left: 132px;
+        }
+        .dot69{
+            top: 70px;
+            left: 230px;
+        }
+        .card:hover .dot69{
+            top: 256px;
+            left: 129px;
+        }
+        .dot70{
+            top: 345px;
+            left: 230px;
+        }
+        .card:hover .dot70{
+            top: 259px;
+            left: 135px;
+        }
+        .dot71{
+            top: 330px;
+            left: 180px;
+        }
+        .card:hover .dot71{
+            top: 259px;
+            left: 126px;
+        }
+        .dot:hover {
+            transform: scale(1.6);
+        }
+        .card:hover {
+            transform: scale(1.3);
+        }
+        .card:hover .text{
+            opacity: 1;
+        }
+        .dot78:hover{
+            background-image: url("insta.png");
+            background-position: center;
+            background-size: cover;
+        }
+        .dot77:hover{
+            background-image: url("x.png");
+            background-position: center;
+            background-size: cover;
+        }
+        .dot76:hover{
+            background-image: url("discord.png");
+            background-position: center;
+            background-size: cover;
+        }
+        .text {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 13px;
+            letter-spacing: 5px;
+            color: white;
+            opacity: 0;
+            transition: all 0.5s cubic-bezier(0.895, 0.03, 0.685, 0.22);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="card">
+        <div class="dot-container">
+            <span class="dot dot1 size5"></span><span class="dot dot2 size5"></span><span
+                class="dot dot3 size5"></span><span class="dot dot4 size5"></span><span
+                class="dot dot5 size5"></span><span class="dot dot6 size5"></span><span
+                class="dot dot7 size5"></span><span class="dot dot8 size5"></span><span
+                class="dot dot9 size5"></span><span class="dot dot10 size5"></span><span
+                class="dot dot11 size5"></span><span class="dot dot12 size5"></span><span
+                class="dot dot13 size5"></span><span class="dot dot14 size5"></span><span
+                class="dot dot15 size5"></span><span class="dot dot16 size5"></span><span
+                class="dot dot17 size5"></span><span class="dot dot18 size5"></span><span
+                class="dot dot19 size5"></span><span class="dot dot20 size5"></span><span
+                class="dot dot21 size5"></span><span class="dot dot22 size5"></span><span
+                class="dot dot23 size5"></span><span class="dot dot24 size5"></span><span
+                class="dot dot25 size5"></span><span class="dot dot26 size5"></span><span
+                class="dot dot27 size5"></span><span class="dot dot28 size5"></span><span
+                class="dot dot29 size5"></span><span class="dot dot30 size5"></span><span
+                class="dot dot31 size5"></span><span class="dot dot32 size5"></span><span
+                class="dot dot33 size5"></span><span class="dot dot34 size5"></span><span
+                class="dot dot35 size5"></span><span class="dot dot36 size5"></span><span
+                class="dot dot37 size5"></span><span class="dot dot38 size5"></span><span
+                class="dot dot39 size5"></span><span class="dot dot40 size5"></span><span
+                class="dot dot41 size5"></span><span class="dot dot42 size5"></span><span
+                class="dot dot43 size5"></span><span class="dot dot47 size5"></span><span class="dot dot48 size5"></span><span
+                class="dot dot49 size5"></span><span class="dot dot50 size5"></span><span
+                class="dot dot51 size5"></span><span class="dot dot52 size10"></span><span
+                class="dot dot53 size10"></span><span class="dot dot54 size10"></span><span
+                class="dot dot55 size10"></span><span class="dot dot56 size10"></span><span
+                class="dot dot57 size10"></span><span class="dot dot58 size10"></span><span
+                class="dot dot59 size10"></span><span class="dot dot60 size10"></span><span
+                class="dot dot61 size10"></span><span class="dot dot62 size10"></span><span
+                class="dot dot63 size10"></span><span class="dot dot64 size10"></span><span
+                class="dot dot65 size10"></span><span class="dot dot66 size5"></span><span
+                class="dot dot67 size5"></span><span class="dot dot68 size5"></span><span
+                class="dot dot69 size5"></span><span class="dot dot70 size5"></span><span
+                class="dot dot71 size5"></span><span class="dot dot72 size15"></span><span
+                class="dot dot73 size15"></span><span class="dot dot74 size15"></span><span
+                class="dot dot75 size15"></span><span class="dot dot76 size20"></span><span
+                class="dot dot77 size20"></span><span class="dot dot78 size20"></span><span
+                class="dot dot79 size15"></span>
+        </div>
+        <div class="text">Cyber Circus</div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        h1{
+            display: flex;
+            justify-content: center;
+        }
+        #display-area {
+            display: flex;
+            width: 330px;
+            height: 60px;
+            background-color: rgb(48, 44, 44);
+            font-size: 40px;
+            color: white;
+            display: flex;
+            justify-content: flex-end;
+        }
+        .buttons{
+            color: white;
+            width: 60px;
+            height: 60px;
+            font-size: 35px;
+            border: 2px solid black;
+            border-radius: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
+        }
+        .btn-parent, .display-parent{
+            display: flex;
+            justify-content: center;
+        }
+        .button-area {
+            background-color: black;
+            display: grid;
+            width: 330px;
+            grid-template-areas: "btn-1 btn-2 btn-3 btn-4"
+            "btn-5 btn-6 btn-7 btn-8"
+            "btn-9 btn-10 btn-11 btn-12"
+            "btn-13 btn-14 btn-15 btn-16"
+            "btn-17 btn-18 btn-19 btn-20";
+            grid-row-gap: 5px;
+        }
+        #buttons-1 {
+            grid-area: btn-1;
+            background-color: grey;
+            font-size: 20px;
+            color: black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        #buttons-2 {
+            color: black;
+            grid-area: btn-2;
+            background-color: grey;
+        }
+        
+        #buttons-3 {
+            color: black;
+            grid-area: btn-3;
+            background-color: grey;
+        }
+
+        #buttons-4 {
+            grid-area: btn-4;
+            background-color: orange;
+        }
+
+        #buttons-5 {
+            grid-area: btn-5;
+            background-color: rgb(70, 70, 70);
+        }
+        
+        #buttons-6 {
+            grid-area: btn-6;
+            background-color: rgb(70, 70, 70);
+        }
+        
+        #buttons-7 {
+            grid-area: btn-7;
+            background-color: rgb(70, 70, 70);
+        }
+        
+        #buttons-8 {
+            grid-area: btn-8;
+            background-color: orange;
+        }
+        
+        #buttons-9 {
+            grid-area: btn-9;
+            background-color: rgb(70, 70, 70);
+        }
+        
+        #buttons-10 {
+            grid-area: btn-10;
+            background-color: rgb(70, 70, 70);
+        }
+        
+        #buttons-11 {
+            grid-area: btn-11;
+            background-color: rgb(70, 70, 70);
+        }
+        
+        #buttons-12 {
+            grid-area: btn-12;
+            background-color: orange;
+        }
+        
+        #buttons-13 {
+            grid-area: btn-13;
+            background-color: rgb(70, 70, 70);
+        }
+        
+        #buttons-14 {
+            grid-area: btn-14;
+            background-color: rgb(70, 70, 70);
+        }
+        
+        #buttons-15 {
+            grid-area: btn-15;
+            background-color: rgb(70, 70, 70);
+        }
+        
+        #buttons-16 {
+            grid-area: btn-16;
+            background-color: orange;
+        }
+        
+        #buttons-17 {
+            grid-area: btn-17;
+            background-color: rgb(70, 70, 70);
+        }
+        #buttons-18{
+            grid-area: btn-18;
+            background-color: rgb(70, 70, 70);
+        }
+        #buttons-19 {
+            grid-area: btn-19;
+            background-color: rgb(70, 70, 70);
+        }
+        
+        #buttons-20 {
+            grid-area: btn-20;
+            background-color: orange;
+        }
+       
+    </style>
+</head>
+
+<body>
+    <h1>Welcome To Calculator</h1>
+    <div class="display-parent">
+        <div id="display-area"></div>
+    </div>
+    <div class="btn-parent">
+        <div class="button-area">
+            <div class="buttons" id="buttons-1">AC</div>
+            <div class="buttons" id="buttons-2">^</div>
+            <div class="buttons" id="buttons-3">%</div>
+            <div class="buttons" id="buttons-4">÷</div>
+            <div class="buttons" id="buttons-5">7</div>
+            <div class="buttons" id="buttons-6">8</div>
+            <div class="buttons" id="buttons-7">9</div>
+            <div class="buttons" id="buttons-8">X</div>
+            <div class="buttons" id="buttons-9">4</div>
+            <div class="buttons" id="buttons-10">5</div>
+            <div class="buttons" id="buttons-11">6</div>
+            <div class="buttons" id="buttons-12">-</div>
+            <div class="buttons" id="buttons-13">1</div>
+            <div class="buttons" id="buttons-14">2</div>
+            <div class="buttons" id="buttons-15">3</div>
+            <div class="buttons" id="buttons-16">+</div>
+            <div class="buttons" id="buttons-17">0</div>
+            <div class="buttons" id="buttons-18">00</div>
+            <div class="buttons" id="buttons-19">.</div>
+            <div class="buttons" id="buttons-20">=</div>
+        </div>
+    </div>    
+    <script>
+        let operator_click = false;
+        let scr = document.getElementById('display-area');
+        let btns = document.getElementsByClassName('buttons');
+        function display(cont){
+            scr.textContent += cont;
+            if(operator_click == false){
+                operand1 = scr.innerHTML;
+            }
+            else {
+
+            }
+        }
+        for(let i of btns){
+            i.addEventListener('click', function(){
+                let ia = i.innerHTML;
+                if (ia == 'AC'){
+                    scr.innerHTML = '';
+                    operator_click = false;
+                }
+                else if (ia == '+'){
+                    operate = "+";
+                    scr.textContent += '+';
+                    operator_click = true;
+                }
+                else if (ia == '-'){
+                    operate = "-";
+                    scr.textContent += '-';
+                    operator_click = true;
+                }
+                else if (ia == 'X'){
+                    operate = "X";
+                    scr.textContent += 'X';
+                    operator_click = true;
+                }
+                else if (ia == '%'){
+                    operate = "%";
+                    scr.textContent += '%';
+                    operator_click = true;
+                }
+                else if (ia == '^'){
+                    operate = "^";
+                    scr.textContent += '^';
+                    operator_click = true;
+                }
+                else if (ia == '÷'){
+                    operate = "÷";
+                    scr.textContent += '÷';
+                    operator_click = true;
+                }
+                else if (ia == '='){
+                    let set_of_operators = ['+', '-', 'X', '%', '^', '÷'];
+                    for (let a of set_of_operators){
+                        let operand2 = scr.innerHTML.split(a);
+                        if (operand2.length == 2){
+                            operand21 = operand2[1];
+                        }
+                    }
+                    if (operate == '+'){
+                        scr.innerHTML = Number(operand1) + Number(operand21);
+                    }
+                    else if (operate == '-'){
+                        scr.innerHTML = Number(operand1) - Number(operand21);
+                    }
+                    else if (operate == 'X'){
+                        scr.innerHTML = Number(operand1) * Number(operand21);
+                    }
+                    else if (operate == '^'){
+                        scr.innerHTML = Number(operand1) ** Number(operand21);
+                    }
+                    else if (operate == '%'){
+                        scr.innerHTML = (Number(operand1) * Number(operand21)) / 100;
+                    }
+                    else if (operate == '÷'){
+                        scr.innerHTML = Number(operand1) / Number(operand21);
+                    }
+                }
+                else {
+                    display(ia);
+                    if (operator_click == true){
+                        operator_click = true;
+                    }
+                    else{
+                    operator_click = false;
+                    }
+                }
+            })
+        }
+
+    </script>
+</body>
+
+</html>

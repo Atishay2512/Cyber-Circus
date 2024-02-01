@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            display: flex; 
+            background-color: rgb(25, 25, 25);
+            justify-content: center;
+        }
+        .loader{
+            margin-top: 200px;
+            width: 100px;
+            height: 100px;
+        }
+        .box{
+            width: 50px;
+            height: 50px;
+        }
+        @keyframes animate{
+            0%, 100%{
+                transform: none;
+            }
+            25%{
+                transform: translateX(100%);
+            }
+            50%{
+                transform: translateX(100%) translateY(100%);
+                background-color: green;
+            }
+            75%{
+                transform: translateY(100%);
+            }
+        }
+        .box:nth-child(1){
+            background-color: blue;
+            animation: animate 2.4s cubic-bezier(0, 0, 0.24, 1.21) infinite;   
+        }
+        @keyframes animate2{
+            0%, 100%{
+                transform: translateX(100%);
+            }
+            25%{
+                transform: none;
+                background-color: green;
+            }
+            50%{
+                transform:translateY(-100%);
+                
+            }
+            75%{
+                transform: translateY(-100%) translateX(100%);
+            }
+        }
+        .box:nth-child(2){
+            background-color: yellow;
+            transform: translateY(-100%) translateX(100%);
+            animation: animate2 2.4s linear infinite;
+        }
+    </style>
+</head>
+<body>
+    <div class="loader">
+        <div class="box"></div>
+        <div class="box"></div>
+    </div>
+</body>
+</html>

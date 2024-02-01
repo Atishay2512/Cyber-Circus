@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clock</title>
+    <style>
+        body{
+            background-color: rgb(29, 29, 29);
+        }
+        .clock_container {
+            border: 2px solid grey;
+            border-radius: 50%;
+            margin: auto;
+            width: 40vw;
+            height: 80vh;
+            background: url('clock.jpg') no-repeat;
+            background-size: cover;
+            background-position: center;
+            /* margin-top: 70px; */
+        }
+
+        #second-hand, #hour-hand, #minute-hand {
+            position: absolute;
+            background-color: white;
+            border-radius: 10px;
+            z-index: 2;
+            transform-origin: bottom;
+            left: 50%;
+        }
+
+        #second-hand {
+            width: 0.25%;
+            height: 35%;
+            top: 8%;
+        }
+
+        #minute-hand {
+            width: 0.5%;
+            height: 30%;
+            top: 13%;
+        }
+
+        #hour-hand {
+            width: 0.75%;
+            height: 20%;
+            top: 23%;
+        }
+
+        #digit-time, #digitday, #digitdate {
+            background: black;
+            font-family: 'Times New Roman';
+            z-index: 1;
+            position: absolute;
+            padding: auto;
+            border: 2px solid black;
+            color: white;
+        }
+
+        #digit-time {
+            width: 9.3%;
+            height: 10%;
+            top: 60%;
+            left: 45.8%;
+            font-size: 40px;
+        }
+
+        #digitday {
+            left: 50.5%;
+            top: 39.5%;
+            width: 6%;
+            height: 6.5%;
+            font-size: 30px;
+        }
+
+        #digitdate {
+            left: 56.5%;
+            top: 39.5%;
+            width: 3%;
+            height: 6.5%;
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="clock_container">
+        <div id="second-hand"></div>
+        <div id="minute-hand"></div>
+        <div id="hour-hand"></div>
+        <div id="digit-time"></div>
+        <div id="digitday"></div>
+        <div id="digitdate"></div>
+    </div>
+    <script>
+        // adding variables for buttons
+        let btn1 = document.getElementById("button1");
+        let btn2 = document.getElementById("button2");
+        let btn3 = document.getElementById("button3");
+        let btn4 = document.getElementById("button4");
+        let digtime = document.getElementById("digit-time");
+
+        // Specifying Digital time display function
+        function digit_time_display(){
+            // Inserting 0 before a single number in minutes and showing the time
+            if (String(mtime).length == 1){
+                mtime = "0" + String(mtime);
+            }
+            digtime.innerHTML = `${htime}:${mtime}`;
+        }
+
+        setInterval(() => {
+            // Getting Date and further hour, minutes, second, day and date
+            d = new Date();
+            htime = d.getHours();
+            mtime = d.getMinutes();
+            stime = d.getSeconds();
+            day = d.getDay();
+            date = d.getDate();
+
+            // Specifying Degrees for rotation
+            hrotate = (30 * htime) + (mtime / 2);
+            mrotate = 6 * mtime;
+            srotate = 6 * stime;
+
+            // Rotating second-hand
+            document.getElementById('second-hand').style.transform = `rotate(${srotate}deg)`;
+
+            // Rotating minute-hand
+            document.getElementById('minute-hand').style.transform = `rotate(${mrotate}deg)`;
+
+            // Rotating Hour-hand
+            document.getElementById('hour-hand').style.transform = `rotate(${hrotate}deg)`;
+
+            // Displaying The Day for number values
+            if (day == 1) {
+                document.getElementById('digitday').innerHTML = `MON`;
+            }
+            else if (day == 2) {
+                document.getElementById('digitday').innerHTML = `TUE`;
+            } 
+            else if (day == 3) {
+                document.getElementById('digitday').innerHTML = `WED`;
+            } 
+            else if (day == 4) {
+                document.getElementById('digitday').innerHTML = `THU`; 
+            } 
+            else if (day == 5) {
+                document.getElementById('digitday').innerHTML = `FRI`; 
+            } 
+            else if (day == 6) {
+                document.getElementById('digitday').innerHTML = `SAT`; 
+            } 
+            else if (day == 0) {
+                document.getElementById('digitday').innerHTML = `SUN`; 
+            }
+
+            // Adding 0 before date and displaying it
+            if(String(date).length == 1){
+                date = "0" + date;
+            }
+            document.getElementById('digitdate').innerHTML = ` ${date}`;
+
+        }, 1000); 
+        setInterval(digit_time_display, 1000);
+        </script>
+</body>
+</html>
